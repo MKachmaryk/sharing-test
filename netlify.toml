@@ -1,0 +1,14 @@
+# Production context:
+# All deploys from the main repository branch
+# will inherit these settings.
+[context.production]
+  [context.production.environment]
+    VUE_APP_API_BASE_URL = "https://motive-api-prod.herokuapp.com/"
+    VUE_APP_PG_BASE_URL = "https://postgrest.motive.fm/"
+
+# Branch deploy context:
+# All deploys that are not from a pull/merge request
+# or from the production branch will inherit these settings.
+[context.branch-deploy.environment]
+  VUE_APP_API_BASE_URL = "https://motive-api-staging.herokuapp.com/"
+  VUE_APP_PG_BASE_URL = "https://staging.postgrest.motive.fm/"

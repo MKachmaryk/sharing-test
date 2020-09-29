@@ -1,0 +1,46 @@
+/*
+ * DISPLAY
+ */
+
+.vh-100 {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.custom-container {
+  position: relative;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: black;
+  overflow-y: scroll;
+}
+
+.children-mb-4 {
+  > div:not(:last-child) {
+    margin-bottom: 4px;
+  }
+}
+
+.toggle-item {
+  position: relative;
+  padding-top: 10px;
+  transition: 350ms ease-out;
+}
+
+.toggle-item.pt-0 {
+  position: relative;
+  padding-top: 0px;
+  transition: 350ms ease-out;
+}
+
+.upper-grid {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 120px;
+  height: calc(100% - 120px);
+  overflow-y: scroll;
+  > div {
+    flex-shrink: 0;
+  }
+}

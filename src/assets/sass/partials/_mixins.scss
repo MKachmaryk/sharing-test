@@ -1,0 +1,105 @@
+@mixin for-size($range) {
+  $iphone-6-min-width: 321px;
+  $iphone-7-min-width: 375px;
+  $iphone-max-width: 414px;
+  $tween-min-width: 512px;
+  $tablet-portrait-min-width: 640px;
+  $medium-screen-min-width: 768px;
+  $tablet-landscape-min-width: 900px;
+  $small-desktop-min-width: 1024px;
+  $smedium-desktop-min-width: 1120px;
+  $desktop-min-width: 1280px;
+  $big-desktop-min-width: 1280px;
+
+  @if $range == iphone-5-only {
+    @media (max-width: #{$iphone-6-min-width - 1}) {
+      @content;
+    }
+  } @else if $range == iphone-only {
+    @media (max-width: #{$iphone-max-width}) {
+      @content;
+    }
+  } @else if $range == above-iphone {
+    @media (min-width: #{$iphone-max-width + 1}) {
+      @content;
+    }
+  } @else if $range == phone-only {
+    @media (max-width: #{$tablet-portrait-min-width - 1}) {
+      @content;
+    }
+  } @else if $range == small-screen-only {
+    @media (max-width: #{$medium-screen-min-width - 1}) {
+      @content;
+    }
+  }  @else if $range == tween-screen-only {
+    @media (min-width: #{$iphone-7-min-width})and (max-width: #{$medium-screen-min-width - 1}) {
+      @content;
+    }
+  } @else if $range == tween-screen-down {
+    @media (max-width: $tween-min-width - 1) {
+      @content;
+    }
+  }  @else if $range == tween-screen-up {
+    @media (min-width: $tween-min-width) {
+      @content;
+    }
+  } @else if $range == tablet-portrait-up {
+    @media (min-width: $tablet-portrait-min-width) {
+      @content;
+    }
+  } @else if $range == medium-screen-up {
+    @media (min-width: $medium-screen-min-width) {
+      @content;
+    }
+  } @else if $range == tablet-landscape-up {
+    @media (min-width: $tablet-landscape-min-width) {
+      @content;
+    }
+  } @else if $range == small-desktop-up {
+    @media (min-width: $small-desktop-min-width) {
+      @content;
+    }
+  } @else if $range == smedium-desktop-up {
+    @media (min-width: $smedium-desktop-min-width) {
+      @content;
+    }
+  } @else if $range == desktop-up {
+    @media (min-width: $desktop-min-width) {
+      @content;
+    }
+  } @else if $range == big-desktop-up {
+    @media (min-width: $big-desktop-min-width) {
+      @content;
+    }
+  }
+}
+
+@mixin min-width( $point ) {
+  @media ( min-width: $point + 'px' ) {
+    @content;
+  }
+}
+
+@mixin max-width( $point ) {
+  @media ( max-width: $point + 'px' ) {
+    @content;
+  }
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin mb($bottom) {
+  margin-bottom: $bottom;
+}

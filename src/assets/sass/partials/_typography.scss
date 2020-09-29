@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,600,600i,700,700i');
+
+$sg-path: '../fonts/space-grotesk';
+
+@font-face {
+  src: url('#{$sg-path}/SpaceGrotesk-Light.woff2') format('woff2'),
+    url('#{$sg-path}/SpaceGrotesk-Light.woff') format('woff'),
+    url('#{$sg-path}/SpaceGrotesk-Light.ttf') format('truetype');
+  font-family: 'Space Grotesk';
+  font-weight: 200;
+}
+
+@font-face {
+  src: url('#{$sg-path}/SpaceGrotesk-Regular.woff2') format('woff2'),
+    url('#{$sg-path}/SpaceGrotesk-Regular.woff') format('woff'),
+    url('#{$sg-path}/SpaceGrotesk-Regular.ttf') format('truetype');
+  font-family: 'Space Grotesk';
+  font-weight: 400;
+}
+
+@font-face {
+  src: url('#{$sg-path}/SpaceGrotesk-Medium.woff2') format('woff2'),
+    url('#{$sg-path}/SpaceGrotesk-Medium.woff') format('woff'),
+    url('#{$sg-path}/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-family: 'Space Grotesk';
+  font-weight: 500;
+}
+
+@font-face {
+  src: url('#{$sg-path}/SpaceGrotesk-SemiBold.woff2') format('woff2'),
+    url('#{$sg-path}/SpaceGrotesk-SemiBold.woff') format('woff'),
+    url('#{$sg-path}/SpaceGrotesk-SemiBold.ttf') format('truetype');
+  font-family: 'Space Grotesk';
+  font-weight: 600;
+}
+
+@font-face {
+  src: url('#{$sg-path}/SpaceGrotesk-Bold.woff2') format('woff2'),
+    url('#{$sg-path}/SpaceGrotesk-Bold.woff') format('woff'),
+    url('#{$sg-path}/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+}
+
+:root {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.body, .text-body {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.body,
+.body-mobile, .text-body, .text-body-mobile {
+  font-size: 13px;
+  line-height: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+a.body {
+  font-weight: 700;
+}
+
+.h1, .text-h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  font-family: 'Space Mono', monospace;
+}
+
+.h2, .text-h2 {
+  font-size: 24px;
+  line-height: 40px;
+  font-family: 'Space Mono', monospace;
+}
+
+.h3,
+.h2-mobile, .text-h3, .text-h2-mobile {
+  font-size: 20px;
+  line-height: 32px;
+  font-family: 'Space Mono', monospace;
+}
+
+.h3-mobile, .text-h3-mobile {
+  font-size: 20px;
+  line-height: 32px;
+  font-family: 'Space Mono', monospace;
+}
+
+.h4, .text-h4 {
+  font-size: 20px;
+  line-height: 32px;
+  font-family: 'Space Grotesk', monospace;
+}
+
+.h4-mobile, .text-h4-mobile {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Space Mono', monospace;
+}
+
+.h5, .text-h5 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+}
+
+.h6, .text-h6 {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-family: 'Space Mono', monospace;
+}
+
+a {
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+}
+
+.caption, .text-caption {
+  font-size: 11px;
+  line-height: 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+}
+
+a.caption, a.text-caption {
+  font-weight: 700;
+}
+
+.caption-bold, .text-caption-bold {
+  font-weight: 700;
+}
+
+.footnote, .text-footnote {
+  @extend .caption;
+  font-style: italic;
+}
+
+button,
+.button, .text-button {
+  font-size: 13px;
+  line-height: 20px;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+}
+
+@media (max-width: 639px) {
+  .h2, .text-h2 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .h3, .text-h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .h4, .text-h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-mobile, .text-body-mobile {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.nav-app-logo {
+  height: 32px;
+  padding: 0;
+}

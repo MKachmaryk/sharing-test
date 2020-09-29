@@ -1,0 +1,59 @@
+.nc-checkbox {
+  position: relative;
+  height: 38px;
+}
+
+.nc-checkbox-text {
+  padding-left: 48px;
+  line-height: 38px;
+}
+
+input.nc-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  height: 38px;
+  width: 38px;
+  border: 0.5px solid #000000;
+  background-color: #eee;
+}
+
+.checkmark:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+input.nc-input:checked ~ .checkmark {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+input.nc-input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.nc-checkbox-text .checkmark:after {
+  left: 14px;
+  top: 8px;
+  width: 9px;
+  height: 18px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
