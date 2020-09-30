@@ -50,12 +50,50 @@ export default {
 
   metaInfo () {
     return {
-      meta: this.meta
-    }
-  },
+      meta: [
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:url',
+          content: 'https://loftie.com'
+        },
+        {
+          name: 'twitter:title',
+          content: 'Vue Social Cards Example'
+        },
+        {
+          name: 'twitter:description',
+          content: 'Vue sample site showing off Twitter and Facebook Cards.'
+        },
+        {
+          name: 'twitter:image',
+          content: 'http://dev.to/social_previews/user/139093.png'
+        },
 
-  mounted () {
-    this.updateSocialMetaTags();
+        {
+          property: 'og:url',
+          content: 'http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html'
+        },
+        {
+          property: 'og:type',
+          content: 'article'
+        },
+        {
+          property: 'og:title',
+          content: 'When Great Minds Don’t Think Alike'
+        },
+        {
+          property: 'og:description',
+          content: 'How much does culture influence creative thinking?'
+        },
+        {
+          property: 'og:image',
+          content: 'http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg'
+        }
+      ]
+    }
   },
 
   /* COMPONENTS */
@@ -73,7 +111,6 @@ export default {
       sharing: false,
       shareUrl: null,
       imageUrl: '',
-      meta: []
     };
   },
 
@@ -385,53 +422,6 @@ export default {
 
   /* METHODS */
   methods: {
-    updateSocialMetaTags () {
-      this.meta = [
-        // Twitter Card
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image'
-        },
-        {
-          name: 'twitter:url',
-          content: 'https://loftie.com'
-        },
-        {
-          name: 'twitter:title',
-          content: 'Vue Social Cards Example'
-        },
-        {
-          name: 'twitter:description',
-          content: 'Vue sample site showing off Twitter and Facebook Cards.'
-        },
-        {
-          name: 'twitter:image',
-          content: 'http://dev.to/social_previews/user/139093.png'
-        },
-        // Facebook OpenGraph
-        {
-          property: 'og:url',
-          content: 'http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html'
-        },
-        {
-          property: 'og:type',
-          content: 'article'
-        },
-        {
-          property: 'og:title',
-          content: 'When Great Minds Don’t Think Alike'
-        },
-        {
-          property: 'og:description',
-          content: 'How much does culture influence creative thinking?'
-        },
-        {
-          property: 'og:image',
-          content: 'http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg'
-        }
-      ]
-    },
-
     async fetchData() {
       if (this.$route.name === 'asset') {
         await this.fetchAssetData();
@@ -466,8 +456,9 @@ export default {
         this.fetchRelatedQaData('asset');
         this.$store.commit('setProfile', { profile: null });
       })
-      .then(async () => {
-        await this.mountAssetMetaTags();
+      .then(async (res) => {
+        console.log('res', res)
+        // await this.mountAssetMetaTags();
       })
     },
     async fetchRelatedQaData(entityType) {
