@@ -49,7 +49,7 @@ import { mapState } from 'vuex';
 export default {
   name: 'MatrixContainer',
 
-  metaInfo: {
+  metaInfo () {
     return {
       meta: this.meta
     }
