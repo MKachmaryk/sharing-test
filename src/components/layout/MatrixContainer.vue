@@ -53,11 +53,7 @@ export default {
       meta: [
         {
           name: 'twitter:card',
-          content: 'summary_large_image'
-        },
-        {
-          name: 'twitter:url',
-          content: 'https://loftie.com'
+          content: 'summary'
         },
         {
           name: 'twitter:title',
@@ -68,7 +64,7 @@ export default {
           content: 'Vue sample site showing off Twitter and Facebook Cards.'
         },
         {
-          name: 'twitter:image',
+          name: 'twitter:image:src',
           content: 'https://dejagerart.com/wp-content/uploads/2018/09/Test-Logo-Circle-black-transparent.png'
         }
       ]
