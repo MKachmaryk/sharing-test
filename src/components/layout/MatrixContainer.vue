@@ -43,7 +43,6 @@ import ShareCard from '@/components/items/ShareCard.vue';
 import Toolbelt from '@/components/tools/Toolbelt.vue';
 import QaModule from '@/components/qa/QaModule.vue';
 import axios from 'axios';
-import VueMeta from 'vue-meta'
 import { mapState } from 'vuex';
 
 export default {
@@ -51,7 +50,28 @@ export default {
 
   metaInfo () {
     return {
-      meta: this.meta
+      meta: [
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:url',
+          content: 'https://loftie.com'
+        },
+        {
+          name: 'twitter:title',
+          content: 'Vue Social Cards Example'
+        },
+        {
+          name: 'twitter:description',
+          content: 'Vue sample site showing off Twitter and Facebook Cards.'
+        },
+        {
+          name: 'twitter:image',
+          content: 'http://dev.to/social_previews/user/139093.png'
+        }
+      ]
     }
   },
 
