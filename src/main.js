@@ -22,9 +22,7 @@ Vue.prototype.$eventBus = new Vue();
 
 Vue.use(VueCarousel);
 Vue.use(Vuelidate);
-Vue.use(VueMeta, {
-  refreshOnceOnNavigation: true
-});
+Vue.use(VueMeta);
 
 Vue.config.productionTip = false;
 
