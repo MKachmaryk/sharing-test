@@ -43,7 +43,6 @@
         :ensemble-name="project.ensemble.name"
         :duration-string="duration"
         :release-date="releaseDate"
-        :song-colors="metadata.audio ? metadata.audio.colors : ''"
         @click="$router.push({ name: 'asset', params: { id: assetId } })"
       />
       <Card
@@ -51,11 +50,6 @@
         class="in-asset-card cursor-pointer"
         :header="name"
         :subheader="`${project.name}`"
-        :metadata="
-          type === 'video'
-            ? [duration, formattedReleaseDate]
-            : [`${metadata.length} tracks`, duration]
-        "
         format="media"
         :image="image"
         text-right

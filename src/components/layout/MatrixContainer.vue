@@ -42,7 +42,6 @@ import Button from '@/components/buttons/Button.vue';
 import ShareCard from '@/components/items/ShareCard.vue';
 import Toolbelt from '@/components/tools/Toolbelt.vue';
 import QaModule from '@/components/qa/QaModule.vue';
-import VueMeta from 'vue-meta';
 import axios from 'axios';
 import { mapState } from 'vuex';
 
