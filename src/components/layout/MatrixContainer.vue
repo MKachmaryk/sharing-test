@@ -575,7 +575,7 @@ export default {
       // Use this.handleGenerateImage method above to generate the image that will be shared on the Twitter card
       this.imageUrl = await this.handleGenerateImage();
 
-      window.open(`https://twitter.com/intent/tweet?url=${encodeURI(this.imageUrl)}`, '_blank');
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURI(window.location.href)}`, '_blank')
     },
 
     initFacebookSDK () {
