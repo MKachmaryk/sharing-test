@@ -51,22 +51,15 @@ export default {
   metaInfo () {
     return {
       meta: [
-        {
-          name: 'twitter:card',
-          content: 'summary'
-        },
-        {
-          name: 'twitter:title',
-          content: 'Vue Social Cards Example'
-        },
-        {
-          name: 'twitter:description',
-          content: 'Vue sample site showing off Twitter and Facebook Cards.'
-        },
-        {
-          name: 'twitter:image:src',
-          content: 'https://dejagerart.com/wp-content/uploads/2018/09/Test-Logo-Circle-black-transparent.png'
-        }
+        // Twitter Card
+        {name: 'twitter:card', content: 'summary'},
+        {name: 'twitter:title', content: 'Vue Social Cards Example'},
+        {name: 'twitter:description', content: 'Vue sample site showing off Twitter and Facebook Cards.'},
+        // Facebook OpenGraph
+        {property: 'og:title', content: 'Vue Social Cards Example'},
+        {property: 'og:site_name', content: 'Vue Example'},
+        {property: 'og:type', content: 'website'},
+        {property: 'og:description', content: 'Vue sample site showing off Twitter and Facebook Cards.'}
       ]
     }
   },
@@ -552,15 +545,21 @@ export default {
     },
 
     async handleShareToFacebook() {
-      const imageUrl = await this.handleGenerateImage();
+      // const imageUrl = await this.handleGenerateImage();
       // eslint-disable-next-line no-undef
-      this.$nextTick(() => {
-        FB.ui({
-          method: 'share',
-          href: imageUrl,
-        }, function (response) {
-          console.log(response)
-        })
+      // this.$nextTick(() => {
+      //   FB.ui({
+      //     method: 'share',
+      //     href: imageUrl,
+      //   }, function (response) {
+      //     console.log(response)
+      //   })
+      // })
+      FB.ui({
+        method: 'share',
+        href: window.location.href
+      }, function (response) {
+        console.log(response)
       })
       // STUB: Share to Facebook
       // Use this.handleGenerateImage method above to generate the image that will be shared on the Facebook card
@@ -569,9 +568,8 @@ export default {
     async handleShareToTwitter() {
       // STUB: Share to Twitter
       // Use this.handleGenerateImage method above to generate the image that will be shared on the Twitter card
-      this.imageUrl = await this.handleGenerateImage();
-
-      window.open(`https://twitter.com/intent/tweet?url=${encodeURI(window.location.href)}`, '_blank')
+      // this.imageUrl = await this.handleGenerateImage();
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURI(window.location.href)}`, '_blank');
     },
 
     initFacebookSDK () {
