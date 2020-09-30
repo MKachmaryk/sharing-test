@@ -69,7 +69,7 @@ export default {
         },
         {
           name: 'twitter:image',
-          content: 'http://dev.to/social_previews/user/139093.png'
+          content: 'https://dejagerart.com/wp-content/uploads/2018/09/Test-Logo-Circle-black-transparent.png'
         }
       ]
     }
